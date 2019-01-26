@@ -299,7 +299,7 @@ spec:
       serviceAccountName: rook-ceph-system
       containers:
       - name: rook-ceph-operator
-        image: rook/ceph:beta
+        image: rook/ceph:master
         args: ["ceph", "operator"]
         volumeMounts:
         - mountPath: /var/lib/rook
@@ -365,12 +365,12 @@ spec:
               fieldPath: metadata.namespace
         resources:
         # The requests and limits set here, allow the mgr pod to use half of one CPU core and 1 gigabyte of memory
-          limits:
-            cpu: "1500m"
-            memory: "1024Mi"
-          requests:
-            cpu: "1500m"
-            memory: "1024Mi"
+        #  limits:
+        #    cpu: "1500m"
+        #    memory: "1024Mi"
+        #  requests:
+        #    cpu: "1500m"
+        #    memory: "1024Mi"
 
       volumes:
       - name: rook-config
